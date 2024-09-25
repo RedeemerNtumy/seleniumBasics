@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -7,6 +8,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+
+import java.util.List;
 
 public class Steps {
 
@@ -24,10 +27,11 @@ public class Steps {
         driver.get("https://parabank.parasoft.com/parabank/index.htm");
 
     }
-    @When("I enter valid {string} and {string}")
-    public void i_enter_valid_credentials(String username, String password) {
-        driver.findElement(By.name("username")).sendKeys(username);
-        driver.findElement(By.name("password")).sendKeys(password);
+    @When("I enter valid credentials")
+    public void i_enter_valid_credentials(DataTable dataTable) {
+        List<String> data= dataTable.asList();
+        driver.findElement(By.name("username")).sendKeys(data.get(0));
+        driver.findElement(By.name("password")).sendKeys(data.get(1));
         driver.findElement(By.name("username")).submit();
 
     }
