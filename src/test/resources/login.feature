@@ -4,14 +4,13 @@ Feature: Login Functionality Feature
   I want to login successfully
 
 
-Scenario Outline: Login Successful
+  Scenario Outline: Login Successful
 
-  Given I am in the login page of the Para Bank Application
-  When I enter valid <username> and <password>
-  Then I should be taken to the Overview Page
+    Given I am in the login page of the Para Bank Application
+    When I enter valid <username> and <password>
+    Then I should be taken to the Overview Page
 
-Examples:
-  |username|password|
-  |"autotester"|"password"|
-  |"tautester" |"password"|
-
+    Examples:
+      |username|password|
+      |"autotester"|"password"|
+      |"tautester" |"password"|

@@ -33,9 +33,9 @@ public class Steps {
     }
     @Then("I should be taken to the Overview Page")
     public void i_should_be_taken_to_the_overview_page() throws InterruptedException {
-       Thread.sleep(5000);
-      driver.findElement(By.xpath("//*[@id=\"rightPanel\"]/div/div/h1")).isDisplayed();
-      driver.findElement(By.linkText("Log out")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//*[@id=\"rightPanel\"]/div/div/h1")).isDisplayed();
+        driver.findElement(By.linkText("Log out")).click();
     }
 
 }
